@@ -7,12 +7,6 @@ import { Navigate, useNavigate } from 'react-router';
 import { useSession, type Session } from '../SessionContext';
 import { signInWithGoogle, signInWithGithub, signInWithCredentials } from '../firebase/auth';
 
-function DemoInfo() {
-  return (
-    <></>
-  );
-}
-
 export default function SignIn() {
   const { session, setSession, loading } = useSession();
   const navigate = useNavigate();
@@ -22,7 +16,7 @@ export default function SignIn() {
   }
 
   if (session) {
-    return <Navigate to="/" />;
+    return <Navigate to="/attendance/" />;
   }
 
   return (
@@ -59,15 +53,6 @@ export default function SignIn() {
         } catch (error) {
           return { error: error instanceof Error ? error.message : 'An error occurred' };
         }
-      }}
-      slots={{ subtitle: DemoInfo }}
-      slotProps={{
-        emailField: {
-          defaultValue: 'toolpad-demo@mui.com',
-        },
-        passwordField: {
-          defaultValue: '@demo1',
-        },
       }}
     />
   );

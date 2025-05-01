@@ -1,6 +1,5 @@
 import * as React from 'react';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Outlet } from 'react-router';
 import type { User } from 'firebase/auth';
 import { ReactRouterAppProvider } from '@toolpad/core/react-router';
@@ -14,19 +13,22 @@ const NAVIGATION: Navigation = [
     title: 'Main',
   },
   {
+    segment: 'attendance/', // Full path to the Dashboard route
     title: 'Dashboard',
     icon: <DashboardIcon />,
   },
   {
-    segment: 'scan',
+    segment: 'attendance/scan/', // Full path to the Scan page route
     title: 'Scan OR Code',
-    icon: <img src="/qr_code.svg" alt="Logo" style={{ height: 24 }} />,
+    icon: <img src="/attendance/qr_code.svg" alt="Logo" style={{ height: 24 }} />,
   }
 ];
 
+
 const BRANDING = {
   title: 'Attendance',
-  logo: <img src="/icon.svg" alt="Logo" style={{ height: 24 }} />
+  logo: <img src="/attendance/icon.svg" alt="Logo" style={{ height: 24 }} />,
+  homeUrl: "/attendance/"
 };
 
 const AUTHENTICATION: Authentication = {

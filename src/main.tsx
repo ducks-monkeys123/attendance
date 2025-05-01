@@ -7,12 +7,13 @@ import DashboardPage from './pages';
 import SignInPage from './pages/signin';
 import ScanPage from './pages/scan';
 
+// Define the router with the base path '/attendance/'
 const router = createBrowserRouter([
   {
     Component: App,
     children: [
       {
-        path: '/',
+        path: '/attendance',
         Component: Layout,
         children: [
           {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: '/sign-in',
+        path: '/attendance/sign-in',
         Component: SignInPage,
       },
     ],
@@ -36,5 +37,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+</React.StrictMode>,
 );

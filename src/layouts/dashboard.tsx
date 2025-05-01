@@ -31,13 +31,13 @@ export default function Layout() {
 
   if (!session) {
     // Add the `callbackUrl` search parameter
-    const redirectTo = `/sign-in?callbackUrl=${encodeURIComponent(location.pathname)}`;
-
+    const redirectTo = `/attendance/sign-in?callbackUrl=${encodeURIComponent(location.pathname)}`;
+    console.log(location.pathname);
     return <Navigate to={redirectTo} replace />;
   }
 
   return (
-    <DashboardLayout>
+    <DashboardLayout slots={{ toolbarAccount: CustomAccount }}>
       <PageContainer>
         <Outlet />
       </PageContainer>
